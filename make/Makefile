@@ -15,11 +15,14 @@ SRC = ../src/
 
 TARGET = COMDYN
 
-TARGET : main.o
-	$(LINK) $(LINKFLAGS) $(TARGET) main.o
+TARGET : main.o user_b.o
+	$(LINK) $(LINKFLAGS) $(TARGET) main.o user_b.o
 
 main.o :
 	$(CC) $(CCFLAGS) -c $(SRC)main.cpp
+
+user_b.o :
+	$(CC) $(CCFLAGS) -c $(SRC)user_b.cpp
 
 clean :
 	rm -rf *.o
